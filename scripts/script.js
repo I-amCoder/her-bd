@@ -274,7 +274,7 @@ function showMessage1() {
   typewriter.callFunction(() => {
     setTimeout(() => {
       window.close();
-    }, 1000);
+    }, 2000);
   });
   typewriter.start();
 }
