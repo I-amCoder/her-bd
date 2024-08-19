@@ -15,8 +15,8 @@ const RENDER_STATES = Object.freeze({
 });
 var CURRENT_STATE = RENDER_STATES.counting;
 
-const audio = new Audio("/media/countdown_wish.weba");
-const audio2 = new Audio("/media/hbd_sound.weba");
+const audio = new Audio("../media/countdown_wish.weba");
+const audio2 = new Audio("../media/hbd_sound.weba");
 
 let confetti = [];
 const confettiCount = 300;
