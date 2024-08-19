@@ -133,7 +133,7 @@ function countdown() {
   const targetDate = new Date("Aug 18, 2024 19:11:00").getTime();
   const initialTimeLeftSeconds = targetDate - new Date().getTime();
   const currentNow = new Date();
-  const alternativeDate = new Date(currentNow.getTime() + 11* 1000);
+  const alternativeDate = new Date(currentNow.getTime() + 11 * 1000);
   var audioPlayed = false;
 
   // Update the countdown every second
@@ -200,6 +200,8 @@ function process() {
 }
 
 function renderNextState(state) {
+  console.log(state);
+
   CURRENT_STATE = state;
   switch (CURRENT_STATE) {
     case RENDER_STATES.counted:
@@ -207,6 +209,10 @@ function renderNextState(state) {
       break;
     case RENDER_STATES.wished:
       showMessage1();
+      break;
+    case RENDER_STATES.message1_shown:
+      showMessage2();
+      break;
     default:
       break;
   }
@@ -239,30 +245,29 @@ function showMessage1() {
   const messageElement = document.getElementById("message1section");
   main.style.display = "none";
   messageElement.style.display = "flex";
-  requestAnimationFrame(() => {
-    messageElement.classList.add("show");
-  });
+  document.body.classList.add("bg-body");
+  setTimeout(() => {
+    requestAnimationFrame(() => {
+      messageElement.classList.add("show");
+    });
+  }, 1000);
 
   const messages = [
-    "i wish you happiness on this wonderful day! happy birthday 🎉🎉",
-    "may god bless you and being more happiness and success in your life #* 🔥🥰",
+    // "i wish you happiness on this wonderful day! happy birthday 🎉🎉",
+    // "may god bless you and being more happiness and success in your life 🔥🥰",
     "Happy Birthday! May all your wishes come true!",
-    "Enjoy your day to the fullest! Happy Birthday!",
   ];
 
   const typewriter = new Typewriter("#message1", {
-    loop: true,
+    loop: false,
     delay: 75,
+    cursor: "_",
     deleteSpeed: 50,
   });
 
   audio2.loop = true;
   messages.forEach((message, index) => {
-    typewriter
-      .typeString(message) // Type the current message
-      .pauseFor(2000) // Wait before deleting
-      .deleteAll() // Delete the message
-      .pauseFor(500); // Pause before typing the next message
+    typewriter.typeString(message).pauseFor(2000).deleteAll().pauseFor(500);
   });
 
   setTimeout(() => {
@@ -270,5 +275,12 @@ function showMessage1() {
     audio2.pause();
   }, 20000);
 
+  typewriter.callFunction(() => {
+    renderNextState(RENDER_STATES.message1_shown);
+  });
   typewriter.start();
+}
+
+function showMessage2() {
+  console.log("here");
 }

@@ -10,6 +10,14 @@ body {
   cursor: pointer;
   font-family: "Righteous", cursive;
   animation: backgroundChange 10s infinite;
+  transition: all 1s ease;
+}
+
+.bg-body {
+  background: url('/her-bd/media/image.png');
+  animation: none;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .confetti {
@@ -86,15 +94,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+
   height: 0;
   overflow: hidden;
   padding: 0 10px;
-  transition: opacity 1s ease, height 1s ease;
+  transition: opacity 2s ease, height 2s ease;
 }
 
 .message1section.show {
-  opacity: 1;
   height: 100vh;
 }
 
@@ -130,8 +137,8 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .name
-  {
+
+  .name {
     font-size: 40px;
   }
 }
