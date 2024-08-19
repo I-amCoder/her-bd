@@ -15,8 +15,8 @@ const RENDER_STATES = Object.freeze({
 });
 var CURRENT_STATE = RENDER_STATES.counting;
 
-const audio = new Audio("../media/countdown_wish.weba");
-const audio2 = new Audio("../media/hbd_sound.weba");
+const audio = new Audio("/her-bd/media/countdown_wish.weba");
+const audio2 = new Audio("/her-bd/media/hbd_sound.weba");
 
 let confetti = [];
 const confettiCount = 300;
@@ -133,7 +133,7 @@ function countdown() {
   const targetDate = new Date("Aug 18, 2024 19:11:00").getTime();
   const initialTimeLeftSeconds = targetDate - new Date().getTime();
   const currentNow = new Date();
-  const alternativeDate = new Date(currentNow.getTime() + 1 * 1000);
+  const alternativeDate = new Date(currentNow.getTime() + 11* 1000);
   var audioPlayed = false;
 
   // Update the countdown every second
@@ -229,7 +229,7 @@ function showHappyBirthDay() {
   setTimeout(() => {
     clearInterval(interval2);
     renderNextState(RENDER_STATES.wished);
-  }, 1000);
+  }, 10000);
 
   render();
 }
@@ -244,12 +244,10 @@ function showMessage1() {
   });
 
   const messages = [
-    "Wishing you a day filled with love and cheer!",
-    "May your birthday be as special as you are!",
+    "i wish you happiness on this wonderful day! happy birthday 🎉🎉",
+    "may god bless you and being more happiness and success in your life #* 🔥🥰",
     "Happy Birthday! May all your wishes come true!",
     "Enjoy your day to the fullest! Happy Birthday!",
-    "Here's to a year filled with blessings and joy!",
-    "Happy Birthday to someone who makes the world brighter!",
   ];
 
   const typewriter = new Typewriter("#message1", {
@@ -258,6 +256,7 @@ function showMessage1() {
     deleteSpeed: 50,
   });
 
+  audio2.loop = true;
   messages.forEach((message, index) => {
     typewriter
       .typeString(message) // Type the current message
