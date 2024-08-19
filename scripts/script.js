@@ -265,5 +265,10 @@ function showMessage1() {
       .pauseFor(500); // Pause before typing the next message
   });
 
+  setTimeout(() => {
+    audio2.loop = false;
+    audio2.pause();
+  }, 20000);
+
   typewriter.start();
 }
