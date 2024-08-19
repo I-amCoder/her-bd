@@ -14,7 +14,7 @@ body {
 }
 
 .bg-body {
-  background: url('/her-bd/media/image.png');
+  background: url("/her-bd/media/image.png");
   animation: none;
   background-repeat: no-repeat;
   background-size: cover;
@@ -90,7 +90,7 @@ body {
   -webkit-text-stroke-color: white;
 }
 
-.message1section {
+.message-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +101,7 @@ body {
   transition: opacity 2s ease, height 2s ease;
 }
 
-.message1section.show {
+.message-section.show {
   height: 100vh;
 }
 
@@ -137,7 +137,10 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-
+  .bg-body {
+    background: url("/her-bd/media/bg-phone.png");
+    background-size: contain;
+  }
   .name {
     font-size: 40px;
   }

@@ -17,6 +17,11 @@ var CURRENT_STATE = RENDER_STATES.counting;
 
 const audio = new Audio("/her-bd/media/countdown_wish.weba");
 const audio2 = new Audio("/her-bd/media/hbd_sound.weba");
+const song = new Audio("/her-bd/media/song.mp3");
+song.volume = 0.1;
+
+const altSeconds = 10;
+const wishSeconds = 10000;
 
 let confetti = [];
 const confettiCount = 300;
@@ -133,7 +138,7 @@ function countdown() {
   const targetDate = new Date("Aug 18, 2024 19:11:00").getTime();
   const initialTimeLeftSeconds = targetDate - new Date().getTime();
   const currentNow = new Date();
-  const alternativeDate = new Date(currentNow.getTime() + 11 * 1000);
+  const alternativeDate = new Date(currentNow.getTime() + altSeconds * 1000);
   var audioPlayed = false;
 
   // Update the countdown every second
@@ -145,6 +150,7 @@ function countdown() {
     var timeLeft = targetDate - now;
     if (initialTimeLeftSeconds <= 10 * 1000) {
       audio.play();
+      song.play();
       audioPlayed = true;
       timeLeft = alternativeDate - now;
     }
@@ -200,8 +206,6 @@ function process() {
 }
 
 function renderNextState(state) {
-  console.log(state);
-
   CURRENT_STATE = state;
   switch (CURRENT_STATE) {
     case RENDER_STATES.counted:
@@ -209,9 +213,6 @@ function renderNextState(state) {
       break;
     case RENDER_STATES.wished:
       showMessage1();
-      break;
-    case RENDER_STATES.message1_shown:
-      showMessage2();
       break;
     default:
       break;
@@ -235,7 +236,7 @@ function showHappyBirthDay() {
   setTimeout(() => {
     clearInterval(interval2);
     renderNextState(RENDER_STATES.wished);
-  }, 10000);
+  }, wishSeconds);
 
   render();
 }
@@ -253,34 +254,27 @@ function showMessage1() {
   }, 1000);
 
   const messages = [
-    // "i wish you happiness on this wonderful day! happy birthday 🎉🎉",
-    // "may god bless you and being more happiness and success in your life 🔥🥰",
-    "Happy Birthday! May all your wishes come true!",
+    "Happy Birthday! 🎉 Wishing you a day as wonderful as you are.  !",
+    "Happy Birthday! From Junaid",
   ];
 
   const typewriter = new Typewriter("#message1", {
     loop: false,
     delay: 75,
     cursor: "_",
-    deleteSpeed: 50,
+    deleteSpeed: 25,
   });
 
-  audio2.loop = true;
-  messages.forEach((message, index) => {
-    typewriter.typeString(message).pauseFor(2000).deleteAll().pauseFor(500);
-  });
+  song.volume = 0.25;
 
-  setTimeout(() => {
-    audio2.loop = false;
-    audio2.pause();
-  }, 20000);
+  typewriter.typeString(messages[0]).pauseFor(2000).deleteAll().pauseFor(500);
+  typewriter.typeString(messages[1]).pauseFor(2000);
+  typewriter.typeString("💝").pauseFor(2000);
 
   typewriter.callFunction(() => {
-    renderNextState(RENDER_STATES.message1_shown);
+    setTimeout(() => {
+      window.close();
+    }, 1000);
   });
   typewriter.start();
-}
-
-function showMessage2() {
-  console.log("here");
 }
