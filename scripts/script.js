@@ -20,7 +20,7 @@ const audio2 = new Audio("/her-bd/media/hbd_sound.weba");
 const song = new Audio("/her-bd/media/song.mp3");
 song.volume = 0.1;
 
-const altSeconds = 10;
+const altSeconds = 12;
 const wishSeconds = 10000;
 
 let confetti = [];
