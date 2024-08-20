@@ -22,6 +22,7 @@ song.volume = 0.1;
 
 const altSeconds = 12;
 const wishSeconds = 10000;
+var targetDate = new Date("Aug 22, 2024 00:00:00").getTime();
 
 let confetti = [];
 const confettiCount = 300;
@@ -135,7 +136,7 @@ window.addEventListener("click", function () {
 
 function countdown() {
   // Set the date we're counting down to
-  const targetDate = new Date("Aug 18, 2024 19:11:00").getTime();
+  
   const initialTimeLeftSeconds = targetDate - new Date().getTime();
   const currentNow = new Date();
   const alternativeDate = new Date(currentNow.getTime() + altSeconds * 1000);
@@ -270,6 +271,7 @@ function showMessage1() {
   typewriter.typeString(messages[0]).pauseFor(2000).deleteAll().pauseFor(500);
   typewriter.typeString(messages[1]).pauseFor(2000);
   typewriter.typeString("💝").pauseFor(2000);
+  typewriter.typeString("Bs itna he hy 🤣🤣! Bye").pauseFor(2000);
 
   typewriter.callFunction(() => {
     setTimeout(() => {
