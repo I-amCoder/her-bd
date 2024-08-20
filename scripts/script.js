@@ -17,12 +17,14 @@ var CURRENT_STATE = RENDER_STATES.counting;
 
 const audio = new Audio("/her-bd/media/countdown_wish.weba");
 const audio2 = new Audio("/her-bd/media/hbd_sound.weba");
-const song = new Audio("/her-bd/media/song.mp3");
-song.volume = 0.1;
+
 
 const altSeconds = 12;
 const wishSeconds = 10000;
 var targetDate = new Date("Aug 22, 2024 00:00:00").getTime();
+const song = new Audio("/her-bd/media/song.mp3");
+song.volume = 0.1;
+
 
 let confetti = [];
 const confettiCount = 300;
@@ -150,8 +152,8 @@ function countdown() {
     // Calculate the time difference
     var timeLeft = targetDate - now;
     if (initialTimeLeftSeconds <= 10 * 1000) {
+      
       audio.play();
-      song.play();
       audioPlayed = true;
       timeLeft = alternativeDate - now;
     }
@@ -223,6 +225,7 @@ function renderNextState(state) {
 function showHappyBirthDay() {
   document.title = "Happy Birthday 😍 Saffa!";
   document.getElementById("message").innerHTML = "Happy Birthday";
+  song.play();
   audio2.play();
   var count = 0;
   const interval1 = setInterval(() => {
