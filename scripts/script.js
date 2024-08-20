@@ -223,7 +223,7 @@ function renderNextState(state) {
 }
 
 function showHappyBirthDay() {
-  document.title = "Happy Birthday 😍 Saffa!";
+  document.title = "Happy Birthday 😍 !";
   document.getElementById("message").innerHTML = "Happy Birthday";
   song.play();
   audio2.play();
