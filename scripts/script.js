@@ -221,6 +221,7 @@ function renderNextState(state) {
 }
 
 function showHappyBirthDay() {
+  document.title = "Happy Birthday 😍 Saffa!";
   document.getElementById("message").innerHTML = "Happy Birthday";
   audio2.play();
   var count = 0;
@@ -270,7 +271,7 @@ function showMessage1() {
 
   typewriter.typeString(messages[0]).pauseFor(2000).deleteAll().pauseFor(500);
   typewriter.typeString(messages[1]).pauseFor(2000);
-  typewriter.typeString("💝").pauseFor(2000);
+  typewriter.typeString("💝").pauseFor(2000).deleteAll().pauseFor(500);
   typewriter.typeString("Bs itna he hy 🤣🤣! Bye").pauseFor(2000);
 
   typewriter.callFunction(() => {
