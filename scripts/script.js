@@ -21,7 +21,7 @@ const audio2 = new Audio("/her-bd/media/hbd_sound.weba");
 
 const altSeconds = 12;
 const wishSeconds = 10000;
-var targetDate = new Date("Aug 19, 2024 00:00:00").getTime();
+var targetDate = new Date("Aug 22, 2024 00:00:00").getTime();
 const song = new Audio("/her-bd/media/song.mp3");
 song.volume = 0.1;
 
@@ -223,7 +223,7 @@ function renderNextState(state) {
 }
 
 function showHappyBirthDay() {
-  document.title = "Happy Birthday 😍 !";
+  document.title = "Happy Birthday 😍 Saffa!";
   document.getElementById("message").innerHTML = "Happy Birthday";
   song.play();
   audio2.play();
