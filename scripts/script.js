@@ -275,7 +275,7 @@ function showMessage1() {
   typewriter.typeString(messages[0]).pauseFor(4000).deleteAll().pauseFor(500);
   typewriter.typeString(messages[1]).pauseFor(2000);
   typewriter.typeString("💝").pauseFor(2000).deleteAll().pauseFor(500);
-  typewriter.typeString("I'm sorry if I hurt you, I want just sick today.").pauseFor(2000).deleteAll().pauseFor(500);
+  typewriter.typeString("I'm sorry if I hurt you, I was just sick today.").pauseFor(2000).deleteAll().pauseFor(500);
   typewriter.typeString("Bs itna he hy 🤣🤣!").pauseFor(2000);
 
   typewriter.callFunction(() => {
