@@ -259,7 +259,7 @@ function showMessage1() {
   }, 1000);
 
   const messages = [
-    "Happy Birthday! 🎉 Wishing you a day as wonderful as you are.  !",
+    "Happy Birthday! 🎉 Wishing you a day as wonderful as you are. May all your dreams come true!",
     "Happy Birthday! From Junaid",
   ];
 
@@ -275,7 +275,8 @@ function showMessage1() {
   typewriter.typeString(messages[0]).pauseFor(2000).deleteAll().pauseFor(500);
   typewriter.typeString(messages[1]).pauseFor(2000);
   typewriter.typeString("💝").pauseFor(2000).deleteAll().pauseFor(500);
-  typewriter.typeString("Bs itna he hy 🤣🤣! Bye").pauseFor(2000);
+  typewriter.typeString("I'm sorry if I hurt you, I want just sick today.").pauseFor(2000).deleteAll().pauseFor(500);
+  typewriter.typeString("Bs itna he hy 🤣🤣!").pauseFor(2000);
 
   typewriter.callFunction(() => {
     setTimeout(() => {
