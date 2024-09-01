@@ -223,7 +223,7 @@ function renderNextState(state) {
 }
 
 function showHappyBirthDay() {
-  document.title = "Happy Birthday 😍 Saffa!";
+  document.title = "Happy Birthday 😍 Farhi!";
   document.getElementById("message").innerHTML = "Happy Birthday";
   song.play();
   audio2.play();
@@ -259,8 +259,8 @@ function showMessage1() {
   }, 1000);
 
   const messages = [
-    "Happy Birthday! 🎉 Wishing you a day as wonderful as you are. May all your dreams come true!",
-    "Happy Birthday! From Junaid",
+    "Happy Birthday Dear Frhi/Lado 💖! 🎉 Wishing you a day as wonderful as you are. May all your dreams come true!",
+    "Happy Birthday! From Matloob",
   ];
 
   const typewriter = new Typewriter("#message1", {
@@ -275,8 +275,6 @@ function showMessage1() {
   typewriter.typeString(messages[0]).pauseFor(4000).deleteAll().pauseFor(500);
   typewriter.typeString(messages[1]).pauseFor(2000);
   typewriter.typeString("💝").pauseFor(2000).deleteAll().pauseFor(500);
-  typewriter.typeString("I'm sorry if I hurt you, I was just sick today.").pauseFor(2000).deleteAll().pauseFor(500);
-  typewriter.typeString("Bs itna he hy 🤣🤣!").pauseFor(2000);
 
   typewriter.callFunction(() => {
     setTimeout(() => {
