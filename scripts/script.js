@@ -223,7 +223,7 @@ function renderNextState(state) {
 }
 
 function showHappyBirthDay() {
-  document.title = "Happy Birthday 😍 Farhi!";
+  document.title = "Happy Birthday 😍 !";
   document.getElementById("message").innerHTML = "Happy Birthday";
   song.play();
   audio2.play();
@@ -259,8 +259,8 @@ function showMessage1() {
   }, 1000);
 
   const messages = [
-    "Happy Birthday Dear Frhi/Lado 💖! 🎉 Wishing you a day as wonderful as you are. May all your dreams come true!",
-    "Happy Birthday! From Matloob",
+    "Happy Birthday Dear  💖! 🎉 Wishing you a day as wonderful as you are. May all your dreams come true!",
+    "Happy Birthday! From Aqib",
   ];
 
   const typewriter = new Typewriter("#message1", {
