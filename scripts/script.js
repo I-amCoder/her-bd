@@ -260,7 +260,7 @@ function showMessage1() {
 
   const messages = [
     "Happy Birthday Dear  💖! 🎉 Wishing you a day as wonderful as you are. May all your dreams come true!",
-    "Happy Birthday! From Aqib",
+    "Happy Birthday!",
   ];
 
   const typewriter = new Typewriter("#message1", {
